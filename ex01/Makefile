@@ -1,13 +1,24 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: havyilma <havyilma@student.42.fr>          +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/11/07 12:16:18 by havyilma          #+#    #+#              #
-#    Updated: 2023/11/07 12:16:20 by havyilma         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
+SRCS	=	implement.cpp main.cpp
 
-a
+OBJS	=	$(SRCS:.cpp=.o)
+
+NAME	=	contact
+
+CC		=	c++
+
+CPPFLAGS=	-std=c++98 -Wall -Wextra -Werror
+
+all:		$(NAME)
+
+$(NAME):	$(OBJS)
+			$(CC) $(OBJS) -o $(NAME)
+
+clean:		
+			$(RM) $(OBJS)
+
+fclean:		clean
+					$(RM) $(NAME)
+
+re:			fclean $(NAME)
+
+.PHONY:		all clean fclean re

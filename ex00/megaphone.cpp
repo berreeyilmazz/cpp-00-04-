@@ -5,44 +5,47 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: havyilma <havyilma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/07 12:29:52 by havyilma          #+#    #+#             */
-/*   Updated: 2023/11/07 12:32:16 by havyilma         ###   ########.fr       */
+/*   Created: 2023/10/20 20:23:11 by havyilma          #+#    #+#             */
+/*   Updated: 2023/12/02 12:29:30 by havyilma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-using namespace std;
-/*
-// new || delete
-int main()
-{
-	int *ptr = nullptr;
-	int *ptr = new int; // int *ptr = new int[bilmemkaç];
-	*ptr = 5;
-	delete ptr;  // delete [] ptr // dangling referans: deleteden sonra ptr yi kullanamazsın ptr2 = ptr1 demiş olsan ptr1i delete etsen de hata
-}
+//using namespace std;
 
-int main()
+// https://youtu.be/-UWIpVIcz_0?si=kz24Cx2rxO3LR4CN
+
+int main(int ac, char **av)
 {
-	int a[] = {10,20,30,40};
-	for (int item:a)
-		cout << item * 2 << endl;
-}
+/*	cout << "Hello world!" << endl;
+	int a = 422;
+	cout << "the value of a:" << a << endl;
+	cout << "toplam: " << toplam << endl;
+	cout << "toplam: " << float(423 / 20);  a *= 2;
+	int x,y,z;
+	cout << "birinci sayıyı giriniz : ";
+	cin >> x;
+	cout << "ikinci sayıyı giriniz: ";
+	cin >> y;
+	cout << "toplam : " << x + y; 
 */
-class Student{
-public:
-	string name;
-	void tellName(){
-		cout << "benim adım " << name << endl;
-	};
-				
-};
-
-int main()
-{
-	Student student1;
-	student1.name = "Berre";
-	student1.tellName();
-	
-	return (0);
+	int i = 1;
+	int j = 0;
+	if (ac < 2)
+		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
+	else
+	{
+		while (av[i])
+		{
+			j = 0;
+			while (av[i][j])
+			{
+				std::cout << static_cast<char>(toupper(av[i][j]));
+				j++;
+			}
+			i++;
+		}
+	}
+	std::cout << std::endl;
+	return 0;
 }
