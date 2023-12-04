@@ -11,27 +11,54 @@ std::string my_print(std::string param)
 		std::cout << "Empty field! Try again." << std::endl;
 		goto label;
 	}
-	return (input);
+	std::string firstTen = input.substr(0,10);
+	return (firstTen);
 }
 
-void set(Contact person) {
-	person.setFirstName(my_print("first name: "));
-	person.setLastName(my_print("last name: "));
-	person.setNickname(my_print("nickname: "));
-	person.setNumber(my_print("phone number: "));
-	person.setDarkestSecret(my_print("darkest secret: "));
+void set(Contact *person) {
+	person->setFirstName(my_print("first name: "));
+	person->setLastName(my_print("last name: "));
+	person->setNickname(my_print("nickname: "));
+	person->setNumber(my_print("phone number: "));
+	person->setDarkestSecret(my_print("darkest secret: "));
+	person->getInfo();
 }
 
-void search(Contact person)
+void search(Contact *person)
 {
-	std::cout << ""
-
-	person.getInfo();
-
+	int i = 0;
+	std::cout << ".----------.----------.----------.----------.----------." << std::endl;
+	std::cout << "|First Name|Last Name | Nickname |Phone Num.|  Secret  |"  << std::endl;
+	std::cout << "|";
+	std::cout << person->getFirstName();
+	while (i < 10 - (int)person->getFirstName().size()) {
+		std::cout << " ";
+		i++; }
+	i = 0;
+	std::cout << "|" << person->getLastName();
+ 	while (i < 10 - (int)person->getLastName().size()) {
+		std::cout << " ";
+		i++; }
+	i = 0;
+	std::cout << "|" << person->getNickname();
+ 	while (i < 10 - (int)person->getNickname().size()) {
+		std::cout << " ";
+		i++;}		
+	i = 0 ;
+	std::cout << "|" << person->getNumber();
+	while (i < 10 - (int)person->getNumber().size()) {
+		std::cout << " ";
+		i++; }
+	i = 0;
+	std::cout << "|" << person->getDarkestSecret();
+	while (i < 10 - (int)person->getDarkestSecret().size()) {
+		std::cout << " ";
+		i++; }
+	std::cout << "|" << std::endl;
 }
 
 int main() {
-	Contact info;
+	Contact *info = new Contact();
 	std::string comm;
 
 	while (1) {

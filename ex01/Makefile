@@ -4,7 +4,7 @@ OBJS	=	$(SRCS:.cpp=.o)
 
 NAME	=	contact
 
-CC		=	c++
+CC		=	c++   
 
 CPPFLAGS=	-std=c++98 -Wall -Wextra -Werror
 
