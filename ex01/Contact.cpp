@@ -1,4 +1,4 @@
-#include "contact.h"
+#include "Contact.h"
 
 void Contact::setFirstName(std::string name) {
 	this->firstName = name;
@@ -20,7 +20,6 @@ void Contact::setDarkestSecret(std::string secret) {
 	darkestSecret = secret;
 }
 
-
 std::string Contact::getFirstName() {
 	return (firstName);
 }
@@ -41,10 +40,11 @@ std::string Contact::getDarkestSecret() {
 	return (darkestSecret);
 }
 
-void Contact::printInfo() { //****
-	std::cout << firstName << std::endl;
-	std::cout << lastName << std::endl;
-	std::cout << nickname << std::endl;
-	std::cout << phoneNumber << std::endl;
-	std::cout << darkestSecret << std::endl;
+void Contact::printInfo(int i) { //****
+	std::cout << "Index          : " << i  << std::endl;
+	std::cout << "First Name     : " << firstName << std::endl;
+	std::cout << "Last Name      : " << lastName << std::endl;
+	std::cout << "Nickname       : " << nickname << std::endl;
+	std::cout << "Phone Number   : " << phoneNumber << std::endl;
+	std::cout << "Darkest Secret : " << darkestSecret << std::endl;
 }

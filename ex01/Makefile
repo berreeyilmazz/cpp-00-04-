@@ -1,8 +1,8 @@
-SRCS	=	implement.cpp main.cpp
+SRCS	=	main.cpp Contact.cpp PhoneBook.cpp Utils.cpp
 
 OBJS	=	$(SRCS:.cpp=.o)
 
-NAME	=	contact
+NAME	=	PhoneBook
 
 CC		=	c++   
 
