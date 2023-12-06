@@ -8,15 +8,9 @@ int main() {
 		std::cout << "Enter one of them: ADD/SEARCH/EXIT : " ;
 		getline(std::cin, comm);
 		if (comm == "ADD")
-		{
 			info->setContacts();
-		}
 		else if (comm == "SEARCH")
-		{
 			info->printContacts();
-			system("leaks PhoneBook");
-
-		}
 		else if (comm == "EXIT")
 			exit(0);
 		else

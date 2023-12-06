@@ -11,10 +11,10 @@ void PhoneBook::printContacts() {
     std::cout << ".----------.----------.----------.----------." << std::endl;
 	std::cout << "|     Index|First Name| Last Name|  Nickname|" << std::endl;
     std::cout << "|----------|----------|----------|----------|" << std::endl;
-    int i = 0;
-    while ((contact[i].getFirstName()).size() > 0 && i < 8) {
-        search(&contact[i], i);
-        i++;  }
+    int j = 0;
+    while ((contact[j].getFirstName()).size() > 0 && j < 8) {
+        search(&contact[j], j);
+        j++;  }
     std::cout << ".----------.----------.----------.----------." << std::endl; 
     std::string scf;
     std::cout << "Enter the index of the entry : " ;
@@ -22,9 +22,12 @@ void PhoneBook::printContacts() {
     if(scf.empty() == 1 || scf.size() >= 2 || isdigit(scf[0]) == 0) {
         std::cout << "empty or invalid ID" << std::endl;
         return; }
-    int indx = std::stoi(scf);
-    if (contact[indx - 1].getFirstName().empty() == 0)  {
-        contact[indx - 1].printInfo(indx);
+    int i = std::stoi(scf);
+    if (i > indx) {
+        std::cout << "invalid ID" << std::endl;
+        return; }
+    if (contact[i - 1].getFirstName().empty() == 0) {
+        contact[i - 1].printInfo(i);
         return; }
     else {
         std::cout << "invalid ID" << std::endl;
