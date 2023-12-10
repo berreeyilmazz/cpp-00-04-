@@ -1,4 +1,4 @@
-#include "Contact.h"
+#include "contact.h"
 
 void Contact::setFirstName(std::string name) {
 	this->firstName = name;

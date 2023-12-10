@@ -1,7 +1,7 @@
 #include "PhoneBook.h"
 
 void PhoneBook::setContacts() {
-    set(&contact[indx]);
+    add(&contact[indx]);
     indx++;
     if (indx == 8)
         indx = 0;
@@ -23,6 +23,7 @@ void PhoneBook::printContacts() {
         std::cout << "empty or invalid ID" << std::endl;
         return; }
     int i = std::stoi(scf);
+    std::cout << "index:" << indx <<  "     i: " << i << std::endl;
     if (i > indx) {
         std::cout << "invalid ID" << std::endl;
         return; }

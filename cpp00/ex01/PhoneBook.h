@@ -4,7 +4,7 @@
 #include <iostream>
 #include <string>
 #include <sstream>
-#include "Contact.h"
+#include "contact.h"
 
 class PhoneBook {
     private:
@@ -19,7 +19,7 @@ class PhoneBook {
         
 };
 
-void set(Contact *person);
+void add(Contact *person);
 void search(Contact *person, int i);
 
 

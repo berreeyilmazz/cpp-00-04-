@@ -1,4 +1,4 @@
-#include "Contact.h"
+#include "contact.h"
 #include "PhoneBook.h"
 
 std::string take_input(std::string param)
@@ -12,6 +12,14 @@ std::string take_input(std::string param)
 		std::cout << "Empty field! Try again." << std::endl;
 		goto label;
 	}
+	if (param == "phone number: ") {
+		int i = 0;
+		while (i < (int)input.size()) {
+			if (isdigit(input[i]) == 0) {
+				std::cout << "Phone number must contain only digits! Try again." << std::endl;
+				goto label; }
+			i++; }
+	}
 	std::string firstTen = input.substr(0,10);
 	if (firstTen.size() >= 10)
 	{
@@ -21,7 +29,7 @@ std::string take_input(std::string param)
 	return (firstTen);
 }
 
-void set(Contact *person) {
+void add(Contact *person) {
 	person->setFirstName(take_input("first name: "));
 	person->setLastName(take_input("last name: "));
 	person->setNickname(take_input("nickname: "));
@@ -30,7 +38,7 @@ void set(Contact *person) {
 //	person->getInfo();
 }
 
-void search(Contact *person, int i) // METHODAA ÇEVRİLEBİLİR
+void search(Contact *person, int i)
 {
 	std::cout << "|";
 	for (int j = 0; j < 9; j++) {
