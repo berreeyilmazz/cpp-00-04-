@@ -1,9 +1,10 @@
-#ifndef LIB_H
+#ifndef LiB_H
 
-#define LIB_H
+#define LiB_H
 
 #include <fstream>
 #include <iostream>
 #include <string.h>
 
 #endif
+

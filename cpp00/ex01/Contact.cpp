@@ -1,5 +1,7 @@
 #include "contact.h"
 
+Contact::Contact() { }
+
 void Contact::setFirstName(std::string name) {
 	this->firstName = name;
 }

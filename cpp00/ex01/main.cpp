@@ -1,19 +1,22 @@
 #include "PhoneBook.h"
 
 int main() {
-	PhoneBook *info = new PhoneBook();
-	std::string comm;
+	PhoneBook	info;
+	std::string	comm;
 
-	while (1) {
+	while (!std::cin.eof()) {
 		std::cout << "Enter one of them: ADD/SEARCH/EXIT : " ;
 		getline(std::cin, comm);
 		if (comm == "ADD")
-			info->setContacts();
+			info.setContacts();
 		else if (comm == "SEARCH")
-			info->printContacts();
+			info.printContacts();
 		else if (comm == "EXIT")
-			exit(0);
+			break;
+		else if (std::cin.eof())
+			break;
 		else
 			std::cout << "Wrong command, try again!" << std::endl;
 	}
+	return (0);
 }

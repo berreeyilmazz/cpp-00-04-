@@ -9,11 +9,10 @@
 class PhoneBook {
     private:
         Contact contact[8];
-    public:
         int  indx;
-        PhoneBook(){
-            indx = 0;
-        };
+    public:
+        PhoneBook();
+		~PhoneBook();
         void setContacts();
         void printContacts();
         

@@ -1,5 +1,4 @@
-#ifndef HUMANA_H
-#define HUMANA_H
+#pragma once
 
 #include "Weapon.h"
 
@@ -11,6 +10,3 @@ class HumanA {
         HumanA(std::string name, Weapon &weap);
         void attack();
 };
-
-
-#endif

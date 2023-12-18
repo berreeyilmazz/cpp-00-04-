@@ -1,5 +1,14 @@
 #include "PhoneBook.h"
 
+PhoneBook::PhoneBook () {
+	std::cout << "Phonebook created" << std::endl;
+	indx = 0;
+}
+
+PhoneBook::~PhoneBook () {
+	std::cout << "Phonebook destroyed" << std::endl;
+}
+
 void PhoneBook::setContacts() {
     add(&contact[indx]);
     indx++;
@@ -12,7 +21,7 @@ void PhoneBook::printContacts() {
 	std::cout << "|     Index|First Name| Last Name|  Nickname|" << std::endl;
     std::cout << "|----------|----------|----------|----------|" << std::endl;
     int j = 0;
-    while ((contact[j].getFirstName()).size() > 0 && j < 8) {
+    while (j < 8 && (contact[j].getFirstName()).size() > 0) {
         search(&contact[j], j);
         j++;  }
     std::cout << ".----------.----------.----------.----------." << std::endl; 
@@ -23,12 +32,11 @@ void PhoneBook::printContacts() {
         std::cout << "empty or invalid ID" << std::endl;
         return; }
     int i = std::stoi(scf);
-    std::cout << "index:" << indx <<  "     i: " << i << std::endl;
+    if (i != 0 && i != 9 && contact[i - 1].getFirstName().empty() == 0) {
+        contact[i - 1].printInfo(i);
+        return; }
     if (i > indx) {
         std::cout << "invalid ID" << std::endl;
-        return; }
-    if (contact[i - 1].getFirstName().empty() == 0) {
-        contact[i - 1].printInfo(i);
         return; }
     else {
         std::cout << "invalid ID" << std::endl;
