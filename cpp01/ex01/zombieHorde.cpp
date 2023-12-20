@@ -6,7 +6,7 @@ Zombie *zombieHorde(int N, std::string name) {
     int i = 1;
     std::string _name;
     while (i < N) {
-        std::cout << "Enter the name of " << i + 1 << "th zombie:";
+        std::cout << "Enter the name of " << i + 1 << "th zombie: ";
         std::cin >> _name;
         zomb[i].setName(_name);
         i++;

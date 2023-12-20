@@ -32,21 +32,22 @@ int main(int ac, char **av) {
 #include <iostream>
 #include <fstream>
 #include <string>
-
 #include <stdio.h>
-void replaceAndWrite(const std::string& filename, const std::string& s1, const std::string& s2) {
+
+void dotReplace(const std::string& filename, const std::string s1, const std::string s2) {
     std::ifstream inputFile(filename);
     std::string outputFilename = filename + ".replace";
     std::ofstream outputFile(outputFilename);
+    std::string line;
+
     if (!inputFile.is_open()) {
-        std::cerr << "Error opening file: " << filename << std::endl;
+        std::cerr << "Error while opening the input file." << std::endl;  // cerr de tamponlama olmadan hemen ekrana yazıyor, daha hızlı
         return; }
     if (!outputFile.is_open()) {
-        std::cerr << "Error creating output file: " << outputFilename << std::endl;
+        std::cerr << "Error while creating the output file" << std::endl;
         inputFile.close(); // dosyanın açılmasını takiben hemen kapatılmadığı durumlar, dosyaya yapılan değişikliklerin hemen disk 
 							//	üzerine yazılmasını geciktirebilir. Bu durumda, close fonksiyonu dosyanın güncel haliyle diskteki depolama birimine yazılmasını sağlar.
         return; }
-    std::string line;
     while (std::getline(inputFile, line)) {
         size_t pos = 0;
         while ((pos = line.find(s1, pos)) != std::string::npos) 
@@ -60,18 +61,19 @@ void replaceAndWrite(const std::string& filename, const std::string& s1, const s
     }
     inputFile.close();
     outputFile.close();
-    std::cout << "Replacement completed. Output written to: " << outputFilename << std::endl;
+    std::cout << "Replacement completed." << std::endl;
 }
 
-int main(int argc, char *argv[]) {
+
+int main(int argc, char **argv) {
     if (argc != 4) {
-        std::cerr << "Incompatible output! It should be like that: ./Replace <filename> <s1> <s2>" << std::endl;
+        std::cerr << "Incompatible output. It should be like that:  ./Replace <filename> <s1> <s2> " << std::endl;
         return 1;
     }
     std::string filename = argv[1];
     std::string s1 = argv[2];
     std::string s2 = argv[3];
-    replaceAndWrite(filename, s1, s2);
+    dotReplace(filename, s1, s2);
 
     return 0;
 }

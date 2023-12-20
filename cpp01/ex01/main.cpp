@@ -2,9 +2,10 @@
 
 int main()
 {
-    Zombie *buff = zombieHorde(4, "berre");
-    buff[0].announce();
-    buff[1].announce();
-    buff[2].announce();
-    buff[3].announce();
+    int number = 5;
+
+    Zombie *buff = zombieHorde(number, "berre");
+    for (int i = 0; i < number; i++)
+        buff[i].announce();
+    delete[] buff;
 }
