@@ -8,7 +8,7 @@ class Zombie {
         std::string name;
     public:
         Zombie(std::string _name);
-        ~Zombie(); //ekleme yapılabilir
+        ~Zombie();
         void announce(void);
 };
 

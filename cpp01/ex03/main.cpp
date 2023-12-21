@@ -32,6 +32,5 @@ int main()
 	jim.attack();    
 	std::cout << std::endl;
 	std::cout << "---------------------------------" << std::endl;
-	system ("leaks ninjaWarrior");
 
   }
