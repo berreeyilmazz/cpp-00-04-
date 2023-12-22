@@ -3,10 +3,10 @@
 #include "Weapon.h"
 
 int main()
-  {
-    /*
+ {
+	{
     Weapon  club = Weapon("crude spiked club");
-    HumanA bob("günce", club);
+    HumanA bob("bob",club);
     std::cout << std::endl;
     std::cout << "----------------1----------------" << std::endl;
     bob.attack();
@@ -15,14 +15,11 @@ int main()
     std::cout << "----------------2----------------" << std::endl;
     bob.attack();
     std::cout << std::endl;
-    std::cout << "---------------------------------" << std::endl;
-
-    return (0);
-} 
-{ */
+	}
+	{
 	Weapon  club = Weapon("crude spiked club");
 	HumanB jim("Jim");
-	jim.setWeapon(club);
+//	jim.setWeapon(club);
 	std::cout << std::endl;
 	std::cout << "----------------1----------------" << std::endl;
 	jim.attack();
@@ -31,6 +28,8 @@ int main()
 	club.setType("some other type of club");
 	jim.attack();    
 	std::cout << std::endl;
-	std::cout << "---------------------------------" << std::endl;
+	std::cout << "---------------------------------" << std::endl; 
+	} 
+}
+  
 
-  }

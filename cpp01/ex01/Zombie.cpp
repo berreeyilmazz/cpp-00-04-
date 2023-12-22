@@ -1,10 +1,12 @@
 #include "Zombie.h"
 
 Zombie::Zombie() {
+//	std::cout << "Zombie deleted" << std::endl;
 	return;
 }
 
 Zombie::~Zombie() {
+//	std::cout << "Zombie deleted" << std::endl;
 	return;
 }
 
